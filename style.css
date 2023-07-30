@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:ital,wght@1,300&family=Quicksand&family=Ubuntu&display=swap');
+
+:root {
+    --online-clr: green;
+    --offline-clr: red;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(244, 233, 214);
+    height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+body>h1,
+h3 {
+    text-transform: capitalize;
+    text-align: center;
+}
+i {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    color: #fff;
+    aspect-ratio: 1/1;
+}
+
+#net-check {
+    display: none;
+    background-color: #fff;
+    border-radius: 0.4rem;
+    position: fixed;
+    bottom: 1rem;
+    right: 0;
+    left: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+    width: max-content;
+    padding: 0.7rem 0.7rem;
+    box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.75);
+}
+
+#net-txt {
+    margin: 0 0.6rem;
+}
+
+.online-animation {
+    animation: hide-notif 500ms ease forwards;
+}
+
+.offline {
+    background-color: var(--offline-clr);
+    border-radius: 50%;
+}
+
+.online {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    color: #fff;
+    aspect-ratio: 1/1;
+    background-color: var(--online-clr);
+    border-radius: 50%;
+}
+
+.cancel{
+    color: rgba(0, 0, 0, 0.44);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.cancel:hover{
+    color: #000;
+}
+
+@keyframes show-notif {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    40% {
+        transform: translateX(5%);
+    }
+
+    80% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes hide-notif {
+    0% {
+        transform: translateX(10px);
+    }
+
+    40% {
+        transform: translateX(0%);
+    }
+
+    80% {
+        transform: translateX(5%);
+    }
+
+    100% {
+        transform: translateX(calc(-100% + -35px));
+    }
+}
+.opacityZero{
+    opacity: 0;
+    color: red;
+}
